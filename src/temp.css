@@ -60,16 +60,3 @@
   border-radius: 5px;
   text-align: center;
 }
-
-.mainblock {
-  padding: 24px;
-  position: relative;
-}
-
-.editbutton {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  font-size: 8px;
-  border: 1px black;
-}

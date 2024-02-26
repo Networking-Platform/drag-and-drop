@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import { Handle, Position } from "reactflow";
 import "./CustomNode.css";
 import Switch from "./Switch";
+import "./Options.css";
 export default memo(({ data, isConnectable }) => {
   const [isEditing, setEditing] = useState(false);
 
@@ -32,11 +33,18 @@ export default memo(({ data, isConnectable }) => {
         style={{ background: "#555" }}
         isConnectable={isConnectable}
       />
-      {isEditing && (
+      {isEditing && data.label == "Client send request" && (
         <div className="detailview">
-          <Switches />
+          <Options_one />
         </div>
       )}
+      {isEditing &&
+        (data.label == "Server respond fail" ||
+          data.label == "Server respond data") && (
+          <div className="detailview">
+            <Options_two />
+          </div>
+        )}
       {/* <Handle
         type="source"
         position={Position.Right}
@@ -48,88 +56,64 @@ export default memo(({ data, isConnectable }) => {
   );
 });
 
-function Switches() {
-  // function App() {
-  //   return (
-  //     <div className="App">
-  //       <div style={{ display: 'inline-block' }}>
-  //         <Switch/> <span> SHEESH </span>
-  //       </div>
-
-  //     </div>
-  //   );
-  // }
-
-  const [isCheckedAddress, setIsCheckedAddress] = useState(false);
-  const [isCheckedHost, setIsCheckedHost] = useState(false);
-  const [isCheckedConnection, setIsCheckedConnection] = useState(false);
-  const [isCheckedClient, setIsCheckedClient] = useState(false);
-  const [isCheckedUserAgent, setIsCheckedUserAgent] = useState(false);
-
-  const handleSwitchChange = (id, isChecked) => {
-    switch (id) {
-      case "address_":
-        setIsCheckedAddress(isChecked);
-        break;
-      case "host_":
-        setIsCheckedHost(isChecked);
-        break;
-      case "connection_":
-        setIsCheckedConnection(isChecked);
-        break;
-      case "client_":
-        setIsCheckedClient(isChecked);
-        break;
-      case "user-agent_":
-        setIsCheckedUserAgent(isChecked);
-        break;
-      default:
-        break;
-    }
-  };
+function Options_one() {
+  const [addressDropdownValue, setAddressDropdownValue] = useState("");
 
   return (
-    <div className="Switches">
-      <div className="switch-box">
-        <Switch
-          id="address_"
-          label="Address?"
-          onChange={(isChecked) => handleSwitchChange("address_", isChecked)}
-          isChecked={isCheckedAddress}
-          //   description="The address of the server."
-        />
+    <div className="options">
+      <div className="container">
+        <div className="dropdown-box">
+          <div className="dropdown-item">
+            <p className="description">HTTP Methods</p>
+            <select
+              value={addressDropdownValue}
+              onChange={(e) => setAddressDropdownValue(e.target.value)}
+            >
+              <option key="get" value="get">
+                get
+              </option>
+              <option key="post" value="post">
+                post
+              </option>
+              <option key="delete" value="delete">
+                delete
+              </option>
+              <option key="put" value="put">
+                put
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-        <Switch
-          id="host_"
-          label="Host"
-          onChange={(isChecked) => handleSwitchChange("host_", isChecked)}
-          isChecked={isCheckedHost}
-          //   description="The host of the server."
-        />
+function Options_two() {
+  const [addressDropdownValue, setAddressDropdownValue] = useState("");
 
-        <Switch
-          id="connection_"
-          label="Connection"
-          onChange={(isChecked) => handleSwitchChange("connection_", isChecked)}
-          isChecked={isCheckedConnection}
-          //   description="Connection Status"
-        />
-
-        <Switch
-          id="client_"
-          label="Client"
-          onChange={(isChecked) => handleSwitchChange("client_", isChecked)}
-          isChecked={isCheckedClient}
-          //   description="Client Status"
-        />
-
-        <Switch
-          id="user-agent_"
-          label="User-Agent"
-          onChange={(isChecked) => handleSwitchChange("user-agent_", isChecked)}
-          isChecked={isCheckedUserAgent}
-          //   description="User-Agent Status"
-        />
+  return (
+    <div className="options">
+      <div className="container">
+        <div className="dropdown-box">
+          <div className="dropdown-item">
+            <p className="description">Responding Code</p>
+            <select
+              value={addressDropdownValue}
+              onChange={(e) => setAddressDropdownValue(e.target.value)}
+            >
+              <option key="200" value="200">
+                200
+              </option>
+              <option key="400" value="400">
+                400
+              </option>
+              <option key="500" value="500">
+                500
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   );

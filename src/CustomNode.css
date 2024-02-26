@@ -7,5 +7,18 @@
   border: 2px solid #040303;
   border-radius: 8px;
   left: 105%; /* Position it to the right of the module */
-  bottom: -100%;
+  top: 0;
+}
+
+.mainblock {
+  padding: 24px;
+  position: relative;
+}
+
+.editbutton {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 8px;
+  border: 1px black;
 }
