@@ -4,6 +4,20 @@ import "./CustomNode.css";
 import Switch from "./Switch";
 import "./Options.css";
 export default memo(({ data, isConnectable }) => {
+
+  let mainblockClassName = "mainblock"; // Default class
+
+  // different color blocks places
+  if (data.label === "Client send request") {
+    mainblockClassName += " clientColorBlock"; 
+  } else if (data.label === "Server receive and process" ) {
+    mainblockClassName += " serverColorBlock"; 
+  } else if (data.label === "Server respond fail") {
+    mainblockClassName += " serverFailColorBlock"; 
+  } else if (data.label === "Server respond data") {
+    mainblockClassName += " serverDataBlock"; 
+  }
+
   const [isEditing, setEditing] = useState(false);
 
   const handleEditClick = () => {
@@ -19,7 +33,7 @@ export default memo(({ data, isConnectable }) => {
         isConnectable={isConnectable}
       />
 
-      <div className="mainblock">
+      <div className={mainblockClassName}>
         <button className="editbutton" onClick={handleEditClick}>
           Edit
         </button>
@@ -65,7 +79,7 @@ function Options_one() {
   const [addressDropdownValue, setAddressDropdownValue] = useState("");
 
   return (
-    <div className="options">
+    <div className="options"> 
       <div className="container">
         <div className="dropdown-box">
           <div className="dropdown-item">

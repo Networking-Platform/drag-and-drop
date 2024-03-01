@@ -29,7 +29,10 @@
 .panel {
   background-color: #E5DEDE;
   width: 100%;
+  color: black;
+  font-weight: bold;
 }
+
 
 .runbutton {
   color: white;

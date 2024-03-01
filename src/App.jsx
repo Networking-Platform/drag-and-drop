@@ -88,7 +88,7 @@ export default function App() {
   return (
     <div className="outercontainer">
       <div className="innercontainer">
-        <h2>1.1 Introduction of the Computer networking</h2>
+        <h2>1.1 Introduction of the Computer Networking</h2>
         <div className="instruction">
           HTTP protocol Web browsers work in a similar way to restaurants. When
           you navigate to a website in your browser, your browser (the client)
@@ -102,6 +102,7 @@ export default function App() {
           logic to generate a working website.
         </div>
         <div className="panel">
+          Game Challenge
           <button className="runbutton">Run</button>
           <button className="helpbutton">Help</button>
           <button className="savebutton">Save</button>
