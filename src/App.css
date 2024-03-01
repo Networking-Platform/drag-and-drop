@@ -6,7 +6,7 @@
 
 .innercontainer {
   width: 80%;
-  text-align: center;
+  text-align: left;
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,6 @@
 .flowcontainer {
   height: 500px;
   width: 100%;
-  border: black solid;
 }
 
 .instruction {
@@ -24,27 +23,28 @@
   font-family: Helvetica;
   height: 180px;
   width: 100%;
-  border: rgb(255, 248, 248) solid;
   margin-bottom: 10px;
 }
 
 .panel {
-  border: 1px black solid;
-  background-color: #a1a1a1;
+  background-color: #E5DEDE;
   width: 100%;
 }
 
 .runbutton {
+  color: white;
   background-color: green;
   margin-left: 800px;
 }
 
 .helpbutton {
+  color: white;
   background-color: #0073ff;
   margin-left: 20px;
 }
 
 .savebutton {
-  background-color: brown;
+  color: white;
+  background-color: rgb(239, 15, 15);
   margin-left: 20px;
 }
