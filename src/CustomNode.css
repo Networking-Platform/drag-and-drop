@@ -4,7 +4,7 @@
 }
 .detailview {
   position: absolute;
-  border: 2px solid #040303;
+  border: 2px solid #000000;
   border-radius: 8px;
   left: 105%; /* Position it to the right of the module */
   top: 0;
@@ -13,7 +13,7 @@
 .mainblock {
   padding: 24px;
   position: relative;
-  color:#040303;
+  color:#000000;
 }
 
 .editbutton {

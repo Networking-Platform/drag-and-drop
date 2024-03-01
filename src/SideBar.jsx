@@ -9,7 +9,7 @@ function SideBar() {
   return (
     <div className="sidebar">
       <div className="description">
-        You can drag these nodes to the pane on the right.
+        Select suitable nodes and drag them to the pane  on the right
       </div>
       <div
         className="dndnode input"
@@ -19,7 +19,7 @@ function SideBar() {
         Client send request
       </div>
       <div
-        className="dndnode"
+        className="dndnode serverblock"
         onDragStart={(event) =>
           onDragStart(event, "Server receive and process")
         }
@@ -35,7 +35,7 @@ function SideBar() {
         Server respond fail
       </div>
       <div
-        className="dndnode output"
+        className="dndnode datablock"
         onDragStart={(event) => onDragStart(event, "Server respond data")}
         draggable
       >
