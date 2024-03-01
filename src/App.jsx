@@ -88,14 +88,14 @@ export default function App() {
   return (
     <div className="outercontainer">
       <div className="innercontainer">
-        <h2>Instruction</h2>
+        <h2>Instructions</h2>
         <div className="instruction">
           HTTP protocol Web browsers work in a similar way to restaurants. When
           you navigate to a website in your browser, your browser (the client)
           will communicate with a web server to retrieve the requested website.
-          The HTTP protocol deals with requests as follows: (i) The client sends
-          a request to the server. (ii) The server receives and processes the
-          request. (iii) If something goes wrong, the server will respond with a
+          <br/>The HTTP protocol deals with requests as follows: <br/>(i) The client sends
+          a request to the server. <br/>(ii) The server receives and processes the
+          request. <br/>(iii) If something goes wrong, the server will respond with a
           failed status code. Otherwise, the server will respond with the
           desired information. We have provided you with the code for the web
           server already. All you have to do is implement the HTTP protocol

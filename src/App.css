@@ -20,9 +20,11 @@
 }
 
 .instruction {
-  height: 150px;
+  text-align: left;
+  font-family: Helvetica;
+  height: 180px;
   width: 100%;
-  border: black solid;
+  border: rgb(255, 248, 248) solid;
   margin-bottom: 10px;
 }
 
