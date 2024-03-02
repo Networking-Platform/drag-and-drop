@@ -8,6 +8,7 @@
   border-radius: 8px;
   left: 105%; /* Position it to the right of the module */
   top: 0;
+  background-color: white;
 }
 
 .mainblock {
@@ -25,22 +26,18 @@
   /* border: 1px black; */
 }
 
-
 .clientColorBlock {
-  background: #3127A0; /* or any other color */
-  
+  background: #3127a0; /* or any other color */
 }
 
 .serverColorBlock {
-  background: #FC9A07; /* or any other color */
+  background: #fc9a07; /* or any other color */
 }
 
 .serverFailColorBlock {
-  
-  background: #F47878; /* or any other color */
+  background: #f47878; /* or any other color */
 }
 
 .serverDataBlock {
-  
-  background: #3ED079;
+  background: #3ed079;
 }
