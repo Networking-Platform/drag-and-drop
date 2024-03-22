@@ -11,6 +11,7 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import "./App.css";
 import "./temp.css";
+import './menuBar.css'
 import SideBar from "./SideBar";
 import CustomNode from "./CustomNode";
 import CustomEdge from "./CustomEdge";
@@ -94,6 +95,18 @@ export default function App() {
 
   return (
     <div className="outercontainer">
+      <div className="purple-menu-bar">
+        {/* Content of the menu bar */}
+        {/* For example: */}
+        <ul>
+          <li className="title" >Website</li>
+          <li className="courseButttom">Courses</li>
+          <li>About us</li>
+          <li>Contact</li>
+          <li>FAQ</li> 
+          <button className="profileButtom" >Kelvin</button>
+        </ul>
+      </div>
       <div className="innercontainer">
         <h2>1.1 Introduction of the Computer Networking</h2>
         <div className="instruction">
