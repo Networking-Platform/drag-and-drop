@@ -4,18 +4,29 @@ import "./CustomNode.css";
 import Switch from "./Switch";
 import "./Options.css";
 export default memo(({ data, isConnectable }) => {
-
   let mainblockClassName = "mainblock"; // Default class
 
   // different color blocks places
   if (data.label === "Client send request") {
-    mainblockClassName += " clientColorBlock"; 
-  } else if (data.label === "Server receive and process" ) {
-    mainblockClassName += " serverColorBlock"; 
+    mainblockClassName += " clientColorBlock";
+  } else if (data.label === "Server receive and process") {
+    mainblockClassName += " serverColorBlock";
   } else if (data.label === "Server respond fail") {
-    mainblockClassName += " serverFailColorBlock"; 
+    mainblockClassName += " serverFailColorBlock";
   } else if (data.label === "Server respond data") {
-    mainblockClassName += " serverDataBlock"; 
+    mainblockClassName += " serverDataBlock";
+  }
+
+  if (data.label === "Caller dial recipient number") {
+    mainblockClassName += " clientColorBlock";
+  } else if (data.label === "Recipient picks up") {
+    mainblockClassName += " serverColorBlock";
+  } else if (data.label === "One person speaks") {
+    mainblockClassName += " serverFailColorBlock";
+  } else if (data.label === "other listens and acknowledges") {
+    mainblockClassName += " serverDataBlock";
+  } else if (data.label === "One of them hang up") {
+    mainblockClassName += " otherBlock";
   }
 
   const [isEditing, setEditing] = useState(false);
@@ -28,6 +39,7 @@ export default memo(({ data, isConnectable }) => {
       <Handle
         type="target"
         position={Position.Left}
+        id="a"
         style={{ background: "#555" }}
         onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
@@ -43,7 +55,21 @@ export default memo(({ data, isConnectable }) => {
       <Handle
         type="source"
         position={Position.Right}
-        id="a"
+        id="b"
+        style={{ background: "#555" }}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type="target"
+        position={Position.Top}
+        id="c"
+        style={{ background: "#555" }}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        id="d"
         style={{ background: "#555" }}
         isConnectable={isConnectable}
       />
@@ -73,13 +99,12 @@ export default memo(({ data, isConnectable }) => {
   );
 });
 
-
 // http methods
 function Options_one() {
   const [addressDropdownValue, setAddressDropdownValue] = useState("");
 
   return (
-    <div className="options"> 
+    <div className="options">
       <div className="container">
         <div className="dropdown-box">
           <div className="dropdown-item">
@@ -152,15 +177,13 @@ function Options_three() {
             <select
               value={addressDropdownValue}
               onChange={(e) => setAddressDropdownValue(e.target.value)}
-            >
-            </select>
+            ></select>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
 
 // encoding options
 function Options_four() {
@@ -195,7 +218,6 @@ function Options_four() {
     </div>
   );
 }
-
 
 // User agent options
 function Options_five() {

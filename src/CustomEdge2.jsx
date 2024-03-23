@@ -13,7 +13,7 @@ const onEdgeClick = (evt, id) => {
   alert(`remove ${id}`);
 };
 
-export default function CustomEdge(props) {
+export default function CustomEdge2(props) {
   if (props.source === props.target) {
     return <SelfConnecting {...props} />;
   }
@@ -52,8 +52,9 @@ export default function CustomEdge(props) {
           {write && fuck}
           <select>
             <option>None</option>
-            <option>OK</option>
-            <option>ERROR</option>
+            <option>Speak too quick</option>
+            <option>Hangs up</option>
+            <option>Else</option>
           </select>
         </div>
       </EdgeLabelRenderer>
@@ -91,8 +92,9 @@ function SelfConnecting(props) {
           {write && fuck}
           <select>
             <option>None</option>
-            <option>OK</option>
-            <option>ERROR</option>
+            <option>Speak too quick</option>
+            <option>Hangs up</option>
+            <option>Else</option>
           </select>
         </div>
       </EdgeLabelRenderer>
